@@ -67,8 +67,6 @@ For emulating different CPU architectures install
 - Sparc 64
 - [System targets](https://www.qemu.org/docs/master/system/targets.html) ...
 
-
-
 # Examples of different architectures
 
 My system is an Intel/AMD X86_64 based system running Ubuntu
@@ -180,11 +178,26 @@ _And many many more options..._
 
 We'll use the QEMU GUI this time
 
-Install
+Install relevant utils
+    $ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon
+
+Start libvirtd for virt-manager
+
+    $ sudo systemctl start libvirtd
+    $ sudo systemctl enable libvirtd
+
+Add user to relevant groups
+
+    $ sudo usermod -aG libvirt $USER
+    $ sudo usermod -aG kvm $USER
+    $ groups
+    thomas adm cdrom sudo dip plugdev kvm lpadmin lxd sambashare docker libvirt
+
+Install virt-manager
 
     $ sudo apt install virt-manager
 
-Run
+# Virt-Manager
 
     $ virt-manager
 
@@ -248,11 +261,11 @@ QEMU also supports temporary snapshots, where any changes made to the virtual ma
 
 # Other use cases
 
-Coreboot - testing and developing open source boot firmware
+## Coreboot - testing and developing open source boot firmware
 
 [Coreboot test image using QEMU](https://doc.coreboot.org/tutorial/part1.html#test-the-image-using-qemu)
 
-[Coreboot QEMU()]https://www.coreboot.org/QEMU)
+[Coreboot QEMU](https://www.coreboot.org/QEMU)
 
 [Coreboot, u-root and Systemboot](https://github.com/linuxboot/book/blob/master/coreboot.u-root.systemboot/README.md)
 

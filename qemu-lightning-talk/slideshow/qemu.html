@@ -198,9 +198,21 @@ emulation needed</p>
 <div id="running-windows-11" class="slide section level1">
 <h1>Running: Windows 11</h1>
 <p>We’ll use the QEMU GUI this time</p>
-<p>Install</p>
+<p>Install relevant utils $ sudo apt -y install bridge-utils cpu-checker
+libvirt-clients libvirt-daemon</p>
+<p>Start libvirtd for virt-manager</p>
+<pre><code>$ sudo systemctl start libvirtd
+$ sudo systemctl enable libvirtd</code></pre>
+<p>Add user to relevant groups</p>
+<pre><code>$ sudo usermod -aG libvirt $USER
+$ sudo usermod -aG kvm $USER
+$ groups
+thomas adm cdrom sudo dip plugdev kvm lpadmin lxd sambashare docker libvirt</code></pre>
+<p>Install virt-manager</p>
 <pre><code>$ sudo apt install virt-manager</code></pre>
-<p>Run</p>
+</div>
+<div id="virt-manager" class="slide section level1">
+<h1>Virt-Manager</h1>
 <pre><code>$ virt-manager</code></pre>
 <p><img src="./images/virt-manager/virt-manager.png" /></p>
 </div>
@@ -259,7 +271,7 @@ snapshot</a></p>
 <p><a
 href="https://doc.coreboot.org/tutorial/part1.html#test-the-image-using-qemu">Coreboot
 test image using QEMU</a></p>
-<p>[Coreboot QEMU()]https://www.coreboot.org/QEMU)</p>
+<p><a href="https://www.coreboot.org/QEMU">Coreboot QEMU</a></p>
 <p><a
 href="https://github.com/linuxboot/book/blob/master/coreboot.u-root.systemboot/README.md">Coreboot,
 u-root and Systemboot</a></p>
