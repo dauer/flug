@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-#
 
-# Normal X64 Go build (if on a X64 system...)
+# Normal X86_64 Go build (if on a 64-bit system like AMD or Intel...)
 go build -o ./bin/hello-x64 ./src/hello.go
 
 # Compiles for ARM 32/64 bit architectures
