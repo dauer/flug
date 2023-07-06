@@ -34,7 +34,7 @@ I work as a software developer/consultant at [Gennemtænkt IT](https://gennemtae
 
 Verify virtualization is enabled
 
-    $ egrep -c '(vmx|svm)' /proc/cpuinfo 
+    $ egrep -c '(vmx|svm)' /proc/cpuinfo
     12
 
 vmx = Intel
@@ -47,8 +47,8 @@ If the value is zero check your BIOS settings...
 
 Install QEMU (the virtualization part)
 
-    $ sudo apt install qemu-kvm 
- 
+    $ sudo apt install qemu-kvm
+
 For emulating different CPU architectures install
 
     $ sudo apt install qemu-user
@@ -82,7 +82,6 @@ A simple "hello world" program written in [Go-lang](https://go.dev/) <img src=".
 
 [Script for compiling](../examples/golang/compile.sh.html) - download [src](../examples/golang/compile.sh)
 
-
     $ file hello-arm64
     hello-arm64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, Go BuildID=ZgcKY7b7tAM4fTfkEmcR..., not stripped
 
@@ -102,10 +101,10 @@ Running the different "hello world" programs
     $ ./hello-x64
     Hello world! From: linux on amd64
 
-    $ ./hello-arm32 
+    $ ./hello-arm32
     bash: ./hello-arm32: cannot execute binary file: Exec format error
 
-    $ qemu-arm hello-arm32 
+    $ qemu-arm hello-arm32
     Hello world! From: linux on arm
 
     $ qemu-arm hello-arm64
@@ -114,10 +113,10 @@ Running the different "hello world" programs
     $ qemu-aarch64 hello-arm64
     Hello world! From: linux on arm64
 
-    $ ./hello-win.exe 
+    $ ./hello-win.exe
     bash: ./hello-win.exe: cannot execute binary file: Exec format error
 
-    $ qemu-x86_64 hello-win.exe 
+    $ qemu-x86_64 hello-win.exe
     Error while loading hello-win.exe: Exec format error
 
 # Running other full systems
@@ -166,7 +165,7 @@ Using the cli
 
 -cpu host - Host CPU og guest are the same in this case so no emulation needed
 
--smp number of CPU cores 
+-smp number of CPU cores
 
 -vga better graphichs through virtio
 
@@ -179,6 +178,7 @@ _And many many more options..._
 We'll use the QEMU GUI this time
 
 Install relevant utils
+
     $ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon
 
 Start libvirtd for virt-manager
@@ -236,7 +236,7 @@ And select the USB drive from the list
 
 <img src="./images/virt-manager/redirect-usb.png" />
 
-# Runnig the hello-win.exe 
+# Runnig the hello-win.exe
 
 We can now run the for Windows compiled "hello world" program
 
