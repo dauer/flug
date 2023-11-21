@@ -15,6 +15,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
@@ -32,26 +33,53 @@ Thomas Rasmussen
 <div id="about-me" class="slide section level1">
 <h1>About me</h1>
 <p>Thomas Rasmussen</p>
-<p><img src="../resources/images/linkedin.png" width="64" height="54" /> <a href="https://www.linkedin.com/in/thomasbrasmussen/">LinkedIn</a></p>
-<p>I work as a software developer/consultant at <a href="https://gennemtaenkt.dk/">Gennemtænkt IT</a><br />
+<p><img src="../resources/images/linkedin.png" width="64" height="54" />
+<a href="https://www.linkedin.com/in/thomasbrasmussen/">LinkedIn</a></p>
+<p>I work as a software developer/consultant at <a
+href="https://gennemtaenkt.dk/">Gennemtænkt IT</a><br />
 </p>
-<p><em>- working primarily with the JVM using <a href="https://groovy-lang.org/">Groovy</a> and <a href="https://grails.org/">Grails</a></em></p>
-<p><a href="https://gennemtaenkt.dk/"><img src="../resources/images/gennemtaenkt-logo.png" width="100" height="100" /></a> <a href="https://www.oracle.com/java/"><img src="../resources/images/java-logo.png" width="259" height="259" /></a> <a href="http://groovy-lang.org/"><img src="../resources/images/groovy-logo.svg" width="307" height="152" /></a> <a href="https://grails.org/"><img src="../resources/images/grails-logo.svg" width="130" height="130" /></a> <a href="http://flug.dk"><img src="../resources/images/flug_logo.jpg" width="250" /></a></p>
+<p><em>- working primarily with the JVM using <a
+href="https://groovy-lang.org/">Groovy</a> and <a
+href="https://grails.org/">Grails</a></em></p>
+<p><a href="https://gennemtaenkt.dk/"><img src="../resources/images/gennemtaenkt-logo.png" width="100" height="100" /></a>
+<a href="https://www.oracle.com/java/"><img src="../resources/images/java-logo.png" width="259" height="259" /></a>
+<a href="http://groovy-lang.org/"><img src="../resources/images/groovy-logo.svg" width="307" height="152" /></a>
+<a href="https://grails.org/"><img src="../resources/images/grails-logo.svg" width="130" height="130" /></a>
+<a href="http://flug.dk"><img src="../resources/images/flug_logo.jpg" width="250" /></a></p>
 </div>
-<div id="git-is-a-distributed-version-control-system" class="slide section level1">
+<div id="git-is-a-distributed-version-control-system"
+class="slide section level1">
 <h1>Git is a distributed version control system</h1>
 <p><img src="../resources/images/Git-Logo-2Color.svg" /></p>
 <blockquote>
-<p>Development was started by Torvalds in April 2005 when the proprietary source-control management (SCM) system used for Linux kernel development since 2002, BitKeeper, revoked its free license for Linux development - <a href="https://en.wikipedia.org/wiki/Git">Wikipedia: Git</a></p>
+<p>Development was started by Torvalds in April 2005 when the
+proprietary source-control management (SCM) system used for Linux kernel
+development since 2002, BitKeeper, revoked its free license for Linux
+development - <a href="https://en.wikipedia.org/wiki/Git">Wikipedia:
+Git</a></p>
 </blockquote>
 <blockquote>
-<p>The decision made in 2002 to use BitKeeper for Linux kernel development was a controversial one. Some, including GNU Project founder Richard Stallman, expressed concern about proprietary tools being used on a flagship free project. While project leader Linus Torvalds and other core developers adopted BitKeeper, several key developers (including Linux veteran Alan Cox) refused to do so, citing the BitMover license, and voicing concern that the project was ceding some control to a proprietary developer - <a href="https://en.wikipedia.org/wiki/BitKeeper">Wikipedia: BitKeeper</a></p>
+<p>The decision made in 2002 to use BitKeeper for Linux kernel
+development was a controversial one. Some, including GNU Project founder
+Richard Stallman, expressed concern about proprietary tools being used
+on a flagship free project. While project leader Linus Torvalds and
+other core developers adopted BitKeeper, several key developers
+(including Linux veteran Alan Cox) refused to do so, citing the BitMover
+license, and voicing concern that the project was ceding some control to
+a proprietary developer - <a
+href="https://en.wikipedia.org/wiki/BitKeeper">Wikipedia:
+BitKeeper</a></p>
 </blockquote>
 </div>
-<div id="dvcs---distributed-version-control-system" class="slide section level1">
+<div id="dvcs---distributed-version-control-system"
+class="slide section level1">
 <h1>(D)VCS - distributed version control system</h1>
 <blockquote>
-<p>In software engineering, a version control system (also known as revision control) is a class of systems responsible for managing changes to computer programs – <a href="https://en.wikipedia.org/wiki/Version_control">Wikipedia: VCS</a></p>
+<p>In software engineering, a version control system (also known as
+revision control) is a class of systems responsible for managing changes
+to computer programs – <a
+href="https://en.wikipedia.org/wiki/Version_control">Wikipedia:
+VCS</a></p>
 </blockquote>
 <ul>
 <li><a href="https://cvs.nongnu.org/">CVS</a></li>
@@ -64,18 +92,23 @@ Thomas Rasmussen
 <div id="git" class="slide section level1">
 <h1>Git</h1>
 <p>Website: <a href="https://git-scm.com/">git-scm.com</a><br />
-Docs: Website: <a href="https://git-scm.com/docs">git-scm.com/docs</a></p>
-<p>At first Git can look like a monster - it has many commands and many ways of doing things</p>
+Docs: Website: <a
+href="https://git-scm.com/docs">git-scm.com/docs</a></p>
+<p>At first Git can look like a monster - it has many commands and many
+ways of doing things</p>
 <p><img src="../resources/images/doom-monster.png" /></p>
 <p>Try to keep it simple - add, commit, push …</p>
-<p>Use it for maintaining the <a href="https://kernel.org/">Linux</a> <a href="https://git.kernel.org/">kernel</a> with thousands of developers - or use it for your own private one developer project</p>
+<p>Use it for maintaining the <a href="https://kernel.org/">Linux</a> <a
+href="https://git.kernel.org/">kernel</a> with thousands of developers -
+or use it for your own private one developer project</p>
 </div>
 <div id="git-install" class="slide section level1">
 <h1>Git install</h1>
 <p>Install Git using your OS package manager</p>
 <p>Ubuntu</p>
 <pre><code>$ sudo apt-get install git-all</code></pre>
-<p>Or dowload and follow instructions from <a href="https://git-scm.com/downloads">Git-scm downloads</a></p>
+<p>Or dowload and follow instructions from <a
+href="https://git-scm.com/downloads">Git-scm downloads</a></p>
 </div>
 <div id="git-configure" class="slide section level1">
 <h1>Git configure</h1>
@@ -103,8 +136,10 @@ user.email=example@example.com</code></pre>
 $ cd my-project
 $ git init
 Initialized empty Git repository in /home/thomas/my-project/.git/</code></pre>
-<p>Git bare also creates a repository, but it does not have the working directory</p>
-<p>Use this for the “main” repository that developers push and pull to/from</p>
+<p>Git bare also creates a repository, but it does not have the working
+directory</p>
+<p>Use this for the “main” repository that developers push and pull
+to/from</p>
 <pre><code>$ mkdir my-project.git
 $ cd my-project.git
 $ git --bare init</code></pre>
@@ -148,10 +183,13 @@ git show 092ca1d854a2aa8fdc8a9c19ee8225eb3d6bc2ca</code></pre>
 <p><strong><em>NOTE:</em></strong> Don’t edit the .git folder!</p>
 </blockquote>
 </div>
-<div id="git---stash-workspace-index-local-upstream" class="slide section level1">
+<div id="git---stash-workspace-index-local-upstream"
+class="slide section level1">
 <h1>Git - Stash, workspace, index, local, upstream</h1>
 <p><img src="../resources/images/git-cheatsheet.png" /></p>
-<p>Source: <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">Git Cheatsheet</a></p>
+<p>Source: <a
+href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">Git
+Cheatsheet</a></p>
 </div>
 <div id="add-files-and-commit" class="slide section level1">
 <h1>Add files and commit</h1>
@@ -199,7 +237,8 @@ vi</code></pre>
 </div>
 <div id="git-revert" class="slide section level1">
 <h1>Git revert</h1>
-<p>The <code>revert</code> command is one of gits ways of undoing commits</p>
+<p>The <code>revert</code> command is one of gits ways of undoing
+commits</p>
 <p><img src="../resources/images/initial-commits.png" /></p>
 <pre><code>$ git revert HEAD
 [master 31adeb6] Revert &quot;M-5&quot;
@@ -208,7 +247,8 @@ vi</code></pre>
 </div>
 <div id="git-reset" class="slide section level1">
 <h1>Git reset</h1>
-<p>Reset is another way of undoing and the most complex and versatile of the two</p>
+<p>Reset is another way of undoing and the most complex and versatile of
+the two</p>
 <ul>
 <li>git reset --hard, --mixed, --soft</li>
 </ul>
@@ -220,11 +260,14 @@ HEAD is now at 161655d M-7</code></pre>
 <div id="branches" class="slide section level1">
 <h1>Branches</h1>
 <blockquote>
-<p>Branching is the duplication of an object under version control (such as a source code file or a directory tree).<br />
-Each object can thereafter be modified separately and in parallel so that the objects become different.<br />
+<p>Branching is the duplication of an object under version control (such
+as a source code file or a directory tree).<br />
+Each object can thereafter be modified separately and in parallel so
+that the objects become different.<br />
 In this context the objects are called branches.</p>
 </blockquote>
-<p>Source: <em><a href="https://en.wikipedia.org/wiki/Branching_(version_control)">Wikipedia</a></em></p>
+<p>Source: <em><a
+href="https://en.wikipedia.org/wiki/Branching_(version_control)">Wikipedia</a></em></p>
 <h2 id="why-branches">Why branches</h2>
 <ul>
 <li>Push to main so others can help or review changes</li>
@@ -252,7 +295,8 @@ $ git merge MyFirstBranch</code></pre>
 </div>
 <div id="git-merge-conflict" class="slide section level1">
 <h1>Git merge conflict</h1>
-<p>Sometimes Git can’t merge if files have been edited by multiple people</p>
+<p>Sometimes Git can’t merge if files have been edited by multiple
+people</p>
 <pre><code>$ git merge MyBranch
 
 &gt;&gt;&gt; Auto-merging README.md
@@ -273,10 +317,12 @@ $ vi README.md
 <div id="git-cherry-pick" class="slide section level1">
 <h1>Git cherry-pick</h1>
 <p><img src="../resources/images/8-bit-cherry.png" /></p>
-<p>git cherry-pick - Apply the changes introduced by some existing commits</p>
+<p>git cherry-pick - Apply the changes introduced by some existing
+commits</p>
 <p><img src="../resources/images/cherry-before.png" /></p>
 <h2 id="example-scenario">Example scenario</h2>
-<p>I have two branches, a prototype I don’t want to merge and a feature branch I occasionally want to merge.</p>
+<p>I have two branches, a prototype I don’t want to merge and a feature
+branch I occasionally want to merge.</p>
 <p>The prototype branch has a file I want.</p>
 </div>
 <div id="git-cherry-pick---fail" class="slide section level1">
@@ -303,7 +349,8 @@ Unmerged paths:
         deleted by us:   LICENSE.md
 
 $ git cherry-pick --abort</code></pre>
-<p>I tried to cherry-pick the P-2 commit which is an edit of a file not present in my current branch - I abort</p>
+<p>I tried to cherry-pick the P-2 commit which is an edit of a file not
+present in my current branch - I abort</p>
 </div>
 <div id="git-cherry-pick-success" class="slide section level1">
 <h1>Git cherry-pick – success</h1>
@@ -314,7 +361,8 @@ $ git cherry-pick --abort</code></pre>
  1 file changed, 3 insertions(+)
  create mode 100644 LICENSE.md</code></pre>
 <p><img src="../resources/images/cherry-picking.png" /></p>
-<p><a href="https://git-scm.com/docs/git-cherry-pick">git-cherry-pick</a></p>
+<p><a
+href="https://git-scm.com/docs/git-cherry-pick">git-cherry-pick</a></p>
 </div>
 <div id="git-tag" class="slide section level1">
 <h1>Git tag</h1>
@@ -347,11 +395,13 @@ $ git rebase master</code></pre>
 $ git rebase MyFeature 
 Successfully rebased and updated refs/heads/master.</code></pre>
 <p><img src="../resources/images/rebase-2.png" /></p>
-<p>Notice difference between <code>MyFirstBranch</code> and <code>MyFeature</code></p>
+<p>Notice difference between <code>MyFirstBranch</code> and
+<code>MyFeature</code></p>
 </div>
 <div id="git-rebase---interactive" class="slide section level1">
 <h1>Git rebase --interactive</h1>
-<p>git rebase is a powerful command, and it can be used for many things - fx squashing multiple commits together into one</p>
+<p>git rebase is a powerful command, and it can be used for many things
+- fx squashing multiple commits together into one</p>
 <pre><code>$ git rebase --interactive HEAD~4
 
 # Opens up in editor
@@ -372,26 +422,33 @@ squash cae1cb7 P-1
 </div>
 <div id="git-rebase-a-note" class="slide section level1">
 <h1>Git rebase – a note</h1>
-<p><strong>Warning:</strong> Be very careful when rebasing pushed code!</p>
+<p><strong>Warning:</strong> Be very careful when rebasing pushed
+code!</p>
 <pre><code>$ git push --force</code></pre>
-<p>Atlassian Git <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">rebase</a> tutorial</p>
+<p>Atlassian Git <a
+href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">rebase</a>
+tutorial</p>
 <p><a href="https://git-scm.com/docs/git-rebase">Git rebase</a></p>
 </div>
 <div id="git-reflog" class="slide section level1">
 <h1>Git reflog</h1>
 <blockquote>
 <p>One of the tenets Linus set for Git was that it had to be safe.<br />
-Meaning you have to be able to get back to any state in the repository - a mechanism for tracking state.</p>
+Meaning you have to be able to get back to any state in the repository -
+a mechanism for tracking state.</p>
 </blockquote>
 <pre><code>$ git reflog</code></pre>
 <blockquote>
-<p><strong><em>NOTE:</em></strong> The reflog is garbage collected, typically after 30-90 days (<a href="https://git-scm.com/docs/git-reflog">configurable</a>)</p>
+<p><strong><em>NOTE:</em></strong> The reflog is garbage collected,
+typically after 30-90 days (<a
+href="https://git-scm.com/docs/git-reflog">configurable</a>)</p>
 </blockquote>
 <p><img src="../resources/images/demo.png" /></p>
 </div>
 <div id="git-hooks" class="slide section level1">
 <h1>Git hooks</h1>
-<p>Like many other Version Control Systems, Git has a way to fire off custom scripts when certain important actions occur</p>
+<p>Like many other Version Control Systems, Git has a way to fire off
+custom scripts when certain important actions occur</p>
 <h2 id="hooks">Hooks</h2>
 <ul>
 <li>Local hooks</li>
@@ -414,54 +471,71 @@ exit 1</code></pre>
 <div id="git-archive" class="slide section level1">
 <h1>Git archive</h1>
 <pre><code>$ git archive --output=archive.tar --format=tar master</code></pre>
-<p>Specify files to be excluded in the <code>.gitattributes</code> file</p>
+<p>Specify files to be excluded in the <code>.gitattributes</code>
+file</p>
 <p>Example:</p>
 <pre><code>.gitattributes  export-ignore
 .gradle         export-ignore
 .idea           export-ignore
 .gitignore      export-ignore
 src/test        export-ignore</code></pre>
-<p>Make sure to commit the <code>.gitattributes</code> file, or git archive won’t pick up the settings</p>
-<p>The <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes">gitattributes</a> can do much more…</p>
+<p>Make sure to commit the <code>.gitattributes</code> file, or git
+archive won’t pick up the settings</p>
+<p>The <a
+href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes">gitattributes</a>
+can do much more…</p>
 </div>
 <div id="git-bisect" class="slide section level1">
 <h1>Git bisect</h1>
-<p><a href="https://git-scm.com/docs/git-bisect">git-bisect</a> - Use binary search to find the commit that introduced a bug</p>
+<p><a href="https://git-scm.com/docs/git-bisect">git-bisect</a> - Use
+binary search to find the commit that introduced a bug</p>
 <pre><code># HEAD is broken and 893b28d is last known working commit
 $ git bisect start HEAD 893b28d --
 $ git bisect run ./gradlew check</code></pre>
-<p>This example uses Gradle, but any testsuite or script that returns an ERROR or OK will do<br />
+<p>This example uses Gradle, but any testsuite or script that returns an
+ERROR or OK will do<br />
 Fx a bash script returning a non-zero value</p>
 <p><img src="../resources/images/demo.png" /></p>
 </div>
 <div id="git-and-binary-files" class="slide section level1">
 <h1>Git and binary files</h1>
-<p>Git can store binary files just fine, but editing them typically causes the repo to grow the size of the file since it cant diff efficiently.</p>
+<p>Git can store binary files just fine, but editing them typically
+causes the repo to grow the size of the file since it cant diff
+efficiently.</p>
 <p>If many big binary files consider Git Annex or LFS</p>
 <ul>
-<li><a href="https://git-annex.branchable.com/">Git annex</a> – allows managing large files with git, without storing the file contents in git</li>
-<li><a href="https://git-lfs.com/">Git LFS</a> – An open source Git extension for versioning large files</li>
+<li><a href="https://git-annex.branchable.com/">Git annex</a> – allows
+managing large files with git, without storing the file contents in
+git</li>
+<li><a href="https://git-lfs.com/">Git LFS</a> – An open source Git
+extension for versioning large files</li>
 </ul>
 </div>
 <div id="submodules" class="slide section level1">
 <h1>submodules</h1>
 <blockquote>
-<p>It often happens that while working on one project, you need to use another project from within it</p>
+<p>It often happens that while working on one project, you need to use
+another project from within it</p>
 </blockquote>
-<p>A way of including other Git projects in your Git repo - but you don’t have a copy of the repo, you have a reference to a commit hash in the other repo.</p>
-<p>If the remote repo changes, your version does not until you update</p>
+<p>A way of including other Git projects in your Git repo - but you
+don’t have a copy of the repo, you have a reference to a commit hash in
+the other repo.</p>
+<p>If the remote repo changes, your version does not until you
+update</p>
 <pre><code>$ git submodule update --init --recursive</code></pre>
 <p>Setting are stored in <code>.gitmodules</code></p>
 <pre><code>[submodule &quot;src/main/java/some-other-project&quot;]
 path = src/main/java/some-other-project
 url = https://github.com/dauer/src/java/some-other-project.git
  ...</code></pre>
-<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodules</a></p>
+<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git
+submodules</a></p>
 </div>
 <div id="sparse-index" class="slide section level1">
 <h1>Sparse index</h1>
 <blockquote>
-<p>The sparse-checkout feature allows users to focus a working directory on a subset of the files at HEAD</p>
+<p>The sparse-checkout feature allows users to focus a working directory
+on a subset of the files at HEAD</p>
 </blockquote>
 <p><a href="https://git-scm.com/docs/sparse-index">Sparse-index</a></p>
 </div>
@@ -484,9 +558,12 @@ url = https://github.com/dauer/src/java/some-other-project.git
 </div>
 <div id="git-gpg" class="slide section level1">
 <h1>Git &amp; GPG</h1>
-<p><a href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">Signing your work</a></p>
+<p><a
+href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">Signing
+your work</a></p>
 <blockquote>
-<p>If you’re taking work from others on the internet and want to verify that commits are actually from a trusted source</p>
+<p>If you’re taking work from others on the internet and want to verify
+that commits are actually from a trusted source</p>
 </blockquote>
 </div>
 <div id="links-resources" class="slide section level1">
@@ -495,7 +572,8 @@ url = https://github.com/dauer/src/java/some-other-project.git
 <li><a href="https://git-scm.com/">Git</a></li>
 <li><a href="https://git-scm.com/book/en/v2">Git book</a></li>
 <li><a href="https://git-scm.com/downloads/guis/">Git GUI</a></li>
-<li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git tutorial</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git
+tutorial</a></li>
 <li><a href="https://github.blog/">GitHub blog</a></li>
 <li>Hosted Git
 <ul>
@@ -506,11 +584,13 @@ url = https://github.com/dauer/src/java/some-other-project.git
 <li>Self-hosted
 <ul>
 <li><a href="https://about.gitea.com/">Gitea</a></li>
-<li><a href="https://www.baeldung.com/linux/git-server-set-up">Baeldung - Git server setup</a></li>
+<li><a href="https://www.baeldung.com/linux/git-server-set-up">Baeldung
+- Git server setup</a></li>
 </ul></li>
 <li><a href="https://www.gitkraken.com/">GitKraken</a>
 <ul>
-<li><a href="https://www.gitkraken.com/gitlens">GitLens</a> for VS Code</li>
+<li><a href="https://www.gitkraken.com/gitlens">GitLens</a> for VS
+Code</li>
 </ul></li>
 </ul>
 </div>
