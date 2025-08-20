@@ -11,7 +11,7 @@ Slides for my [OverlayFS](https://en.wikipedia.org/wiki/OverlayFS) lightning [ta
 
 The slides are build using [Asciidoctor](https://asciidoctor.org/) and their Gradle [plugin](https://asciidoctor.github.io/asciidoctor-gradle-plugin/master/user-guide/)
 
-The presentation is set using [RevealJS](https://revealjs.com/) and the [solarized](https://revealjs.com/themes/) theme
+The presentation uses [RevealJS](https://revealjs.com/) and the [solarized](https://revealjs.com/themes/) theme
 
 ---
 
