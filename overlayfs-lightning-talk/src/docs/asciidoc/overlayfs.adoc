@@ -1,0 +1,81 @@
+= OverlayFS
+Thomas Rasmussen
+
+ifndef::imagesdir[:imagesdir: images]
+
+== Introduktion
+
+* OverlayFS er et union filsystem
+ ** Dvs. man kan merge 2 eller flere filsystemer s&aring; de optr&aelig;der som et
+* Linux kernel 3.18, December 2014
+* Tilsvarende filsystemer
+ ** Aufs
+ ** UnionFS
+
+== Anvendelse
+
+* Merge foldere / filsystemer
+* Docker
+* Live CD'er
+
+== Begreber
+
+image::oversigt.png[width=75%]
+
+=== Begreber
+
+* Overlay
+ ** Er det virtuelle mergede filsystem
+* Upperdir
+ ** Hvis der foretages &aelig;ndriger sker de her
+* Lowerdir(s)
+ ** Read Only filsystemer
+* Workdir
+ ** Temp mappe, benyttes ved redigering af filer i lowerdirs
+
+== Filsystemer
+
+Upperdir og lowerdir(s) kan v&aelig;re
+
+* Upperdir
+** Filsystemer
+** Foldere / mapper i det samme filsystem
+
+* Lowerdir(s)
+** Filsystemer mountet b&aring;de RW eller RO
+** Foldere / mapper i det samme filsystem
+
+== Eksempel 1
+
+[source,bash]
+.Mount filsystemer
+----
+include::{includedir}/bash/mount.sh[]
+----
+
+[source,bash]
+.Umount filsystem
+----
+include::{includedir}/bash/umount.sh[]
+----
+
+== Rediger
+image::animation/anim.gif[width=75%]
+
+* (1) Fil i lowerdir redigeres
+* (2) Filen flyttes via workdir
+* (3) til upperdir
+ ** Filen i overlay er nu den redigerede udgave fra upperdir
+
+
+== Demo
+
+[.thumb]
+image::crash-n-burn.jpg[width=75%]
+
+
+== Links
+* https://blog.programster.org/overlayfs
+* https://en.wikipedia.org/wiki/OverlayFS
+* https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt
+* https://windsock.io/the-overlay-filesystem/
