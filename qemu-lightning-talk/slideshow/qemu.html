@@ -11,10 +11,19 @@
   <style type="text/css">
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
@@ -32,22 +41,34 @@ Thomas Rasmussen
 <div id="about-me" class="slide section level1">
 <h1>About me</h1>
 <p>Thomas Rasmussen</p>
-<p><img src="./images/linkedin.png" width="64" height="54" /> <a href="https://www.linkedin.com/in/thomasbrasmussen/">LinkedIn</a></p>
-<p>I work as a software developer/consultant at <a href="https://gennemtaenkt.dk/">Gennemtænkt IT</a><br />
+<p><img src="./images/linkedin.png" width="64" height="54" /> <a
+href="https://www.linkedin.com/in/thomasbrasmussen/">LinkedIn</a></p>
+<p>I work as a software developer/consultant at <a
+href="https://gennemtaenkt.dk/">Gennemtænkt IT</a><br />
 </p>
-<p><em>- working primarily on the JVM using <a href="https://groovy-lang.org/">Groovy</a> and <a href="https://grails.org/">Grails</a></em></p>
-<p><img src="./images/gennemtaenkt-logo.png" width="100" height="100" /> <img src="./images/java-logo.png" width="259" height="259" /> <img src="./images/groovy-logo.svg" width="307" height="152" /> <img src="./images/grails-logo.svg" width="130" height="130" /></p>
+<p><em>- working primarily on the JVM using <a
+href="https://groovy-lang.org/">Groovy</a> and <a
+href="https://grails.org/">Grails</a></em></p>
+<p><img src="./images/gennemtaenkt-logo.png" width="100" height="100" />
+<img src="./images/java-logo.png" width="259" height="259" />
+<img src="./images/groovy-logo.svg" width="307" height="152" />
+<img src="./images/grails-logo.svg" width="130" height="130" /></p>
 </div>
 <div id="qemu" class="slide section level1">
 <h1>QEMU</h1>
-<div class="figure">
-<img src="./images/qemu-logo.png" alt="" />
-<p class="caption">A generic and open source machine emulator and virtualizer</p>
+<div class="float">
+<img src="./images/qemu-logo.png"
+alt="A generic and open source machine emulator and virtualizer" />
+<div class="figcaption">A generic and open source machine emulator and
+virtualizer</div>
 </div>
 <ul>
-<li><strong>Full-system emulation</strong> - Run operating systems for any machine, on any supported architecture</li>
-<li><strong>User-mode emulation</strong> - Run programs for another Linux/BSD target, on any supported architecture</li>
-<li><strong>Virtualization</strong> - Run KVM and Xen virtual machines with near native performance</li>
+<li><strong>Full-system emulation</strong> - Run operating systems for
+any machine, on any supported architecture</li>
+<li><strong>User-mode emulation</strong> - Run programs for another
+Linux/BSD target, on any supported architecture</li>
+<li><strong>Virtualization</strong> - Run KVM and Xen virtual machines
+with near native performance</li>
 </ul>
 <p><a href="https://www.qemu.org/">Qemu.org</a></p>
 </div>
@@ -66,7 +87,8 @@ Thomas Rasmussen
 <p>For emulating different CPU architectures install</p>
 <pre><code>$ sudo apt install qemu-user</code></pre>
 </div>
-<div id="run-applications-for-different-cpu-architectures" class="slide section level1">
+<div id="run-applications-for-different-cpu-architectures"
+class="slide section level1">
 <h1>Run applications for different CPU architectures</h1>
 <ul>
 <li>X86</li>
@@ -78,18 +100,26 @@ Thomas Rasmussen
 <li>S390x</li>
 <li>Sparc 32</li>
 <li>Sparc 64</li>
-<li><a href="https://www.qemu.org/docs/master/system/targets.html">System targets</a> …</li>
+<li><a
+href="https://www.qemu.org/docs/master/system/targets.html">System
+targets</a> …</li>
 </ul>
 </div>
-<div id="examples-of-different-architectures" class="slide section level1">
+<div id="examples-of-different-architectures"
+class="slide section level1">
 <h1>Examples of different architectures</h1>
 <p>My system is an Intel/AMD X86_64 based system running Ubuntu</p>
 <pre><code>$ uname -a
 Linux 6.2.0-20-generic #20-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  6 2023 x86_64 x86_64 x86_64 GNU/Linux</code></pre>
-<p>A simple “hello world” program written in <a href="https://go.dev/">Go-lang</a> <img src="./images/gopher.png" /></p>
-<p><a href="../examples/golang/src/hello.go.html">Hello world in Go-lang</a> - download <a href="../examples/golang/src/hello.go">src</a></p>
-<p>and cross compiled for different CPU architectures and operating systems:</p>
-<p><a href="../examples/golang/compile.sh.html">Script for compiling</a> - download <a href="../examples/golang/compile.sh">src</a></p>
+<p>A simple “hello world” program written in <a
+href="https://go.dev/">Go-lang</a> <img src="./images/gopher.png" /></p>
+<p><a href="../examples/golang/src/hello.go.html">Hello world in
+Go-lang</a> - download <a
+href="../examples/golang/src/hello.go">src</a></p>
+<p>and cross compiled for different CPU architectures and operating
+systems:</p>
+<p><a href="../examples/golang/compile.sh.html">Script for compiling</a>
+- download <a href="../examples/golang/compile.sh">src</a></p>
 <pre><code>$ file hello-arm64
 hello-arm64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, Go BuildID=ZgcKY7b7tAM4fTfkEmcR..., not stripped
 
@@ -102,7 +132,8 @@ hello: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, G
 $ file hello-win.exe
 hello-win.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows, 13 sections</code></pre>
 </div>
-<div id="examples-of-different-architectures---running" class="slide section level1">
+<div id="examples-of-different-architectures---running"
+class="slide section level1">
 <h1>Examples of different architectures - running …</h1>
 <p>Running the different “hello world” programs</p>
 <pre><code>$ ./hello-x64
@@ -128,15 +159,23 @@ Error while loading hello-win.exe: Exec format error</code></pre>
 </div>
 <div id="running-other-full-systems" class="slide section level1">
 <h1>Running other full systems</h1>
-<p>QEMU does more than letting us run applikation written for different CPU architectures it also lets us run other complete Operating Systems</p>
+<p>QEMU does more than letting us run applikation written for different
+CPU architectures it also lets us run other complete Operating
+Systems</p>
 <h2 id="kubuntu">Kubuntu</h2>
 <p>Kubuntu 22.04.2 Desktop AMD64 ISO</p>
 <p><a href="https://kubuntu.org/getkubuntu/">Get Kubuntu</a></p>
 <h2 id="windows">Windows</h2>
 <p>Get a Windows 11 development environment</p>
-<p><a href="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/">Download a virtual machine</a></p>
-<p>I downloaded the <code>WinDev2305Eval.VirtualBox.zip</code> for <a href="https://www.virtualbox.org/">Virtualbox</a></p>
-<p>QEMU doesn’t run Virtualbox <code>.ova</code> files, they need to be converted from <code>.ova</code> to <code>.qcow2</code> (QEMU <a href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.3/html/technical_reference/qcow2">Copy-On-Write version 2</a>) format.<br />
+<p><a
+href="https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/">Download
+a virtual machine</a></p>
+<p>I downloaded the <code>WinDev2305Eval.VirtualBox.zip</code> for <a
+href="https://www.virtualbox.org/">Virtualbox</a></p>
+<p>QEMU doesn’t run Virtualbox <code>.ova</code> files, they need to be
+converted from <code>.ova</code> to <code>.qcow2</code> (QEMU <a
+href="https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.3/html/technical_reference/qcow2">Copy-On-Write
+version 2</a>) format.<br />
 </p>
 <pre><code>$ unzip WinDev2305Eval.VirtualBox.zip
 $ tar -xvf WinDev2305Eval.ova
@@ -145,7 +184,9 @@ $ ls
   WinDev2305Eval-disk001.vmdk
   WinDev2305Eval.ovf
 $ qemu-img convert WinDev2305Eval-disk001.vmdk WinDev2305Eval.qcow2 -O qcow2</code></pre>
-<p><a href="https://tekbyte.net/how-to-convert-ova-image-to-qcow2-qemu-and-virt-manager/">How to convert ova image to qcow2</a></p>
+<p><a
+href="https://tekbyte.net/how-to-convert-ova-image-to-qcow2-qemu-and-virt-manager/">How
+to convert ova image to qcow2</a></p>
 </div>
 <div id="running-kubuntu" class="slide section level1">
 <h1>Running: Kubuntu</h1>
@@ -156,7 +197,8 @@ $ qemu-img convert WinDev2305Eval-disk001.vmdk WinDev2305Eval.qcow2 -O qcow2</co
     -drive file=Image.img \
     -m 4G -cpu host -smp 4 -vga virtio -display sdl,gl=on \</code></pre>
 <p>-m memory/RAM</p>
-<p>-cpu host - Host CPU og guest are the same in this case so no emulation needed</p>
+<p>-cpu host - Host CPU og guest are the same in this case so no
+emulation needed</p>
 <p>-smp number of CPU cores</p>
 <p>-vga better graphichs through virtio</p>
 <p>-display sdl gl=on enables OpenGL for smoother graphics</p>
@@ -166,7 +208,7 @@ $ qemu-img convert WinDev2305Eval-disk001.vmdk WinDev2305Eval.qcow2 -O qcow2</co
 <h1>Running: Windows 11</h1>
 <p>We’ll use the QEMU GUI this time</p>
 <p>Install relevant utils</p>
-<pre><code>$ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon</code></pre>
+<pre><code>$ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon libvirt-daemon-system</code></pre>
 <p>Start libvirtd for virt-manager</p>
 <pre><code>$ sudo systemctl start libvirtd
 $ sudo systemctl enable libvirtd</code></pre>
@@ -214,24 +256,53 @@ thomas adm cdrom sudo dip plugdev kvm lpadmin lxd sambashare docker libvirt</cod
 <p>We can now run the for Windows compiled “hello world” program</p>
 <p><img src="./images/virt-manager/virt-manager-win11-hello.png" /></p>
 </div>
-<div id="shared-folders-between-host-and-guest-os" class="slide section level1">
+<div id="shared-folders-between-host-and-guest-os"
+class="slide section level1">
 <h1>Shared folders between host and guest OS</h1>
-<p>It is also possible to mount folders on the host machine into the guest machine using 9p virtio as the transport for sharing files</p>
-<p><a href="https://www.linux-kvm.org/page/9p_virtio">Example Sharing Host files with the Guest</a></p>
+<p>A quick way to share files between host and guest is to create an ISO
+image containing the files</p>
+<pre><code>$ mkisofs -o ./cd.iso ./share/</code></pre>
+<p>You might have to install <code>mkisofs</code></p>
+<pre><code>$ sudo apt install genisoimage</code></pre>
+<p>Then add the <code>-cdrom</code> parameter to the commandlist when
+starting <code>qemu</code></p>
+<pre><code>$ qemu-system-x86_64 ... \
+    -cdrom ./cd.iso</code></pre>
+<p>Another option is to mount folders on the host machine into the guest
+machine using 9p virtio as the transport for sharing files</p>
+<pre><code>$ qemu-system-x86_64 ... \
+    -drive file=Image.img,if=virtio \
+    -fsdev local,security_model=passthrough,id=fsdev0,path=./share \
+    -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare \</code></pre>
+<p>For an explanation of the parameters se <a
+href="https://www.linux-kvm.org/page/9p_virtio">Example Sharing Host
+files with the Guest</a></p>
+<p>On the guest you now have to mount the shared folder</p>
+<pre><code>$ mkdir /tmp/host_files
+$ mount -t 9p -o trans=virtio,version=9p2000.L hostshare /tmp/host_files</code></pre>
 </div>
 <div id="snapshots" class="slide section level1">
 <h1>Snapshots</h1>
 <h2 id="break---restore---retry">break - restore - retry…</h2>
-<p>QEMU supports snapshots - if you break something while testing just go back to previous snapshot</p>
-<p>QEMU also supports temporary snapshots, where any changes made to the virtual machine while it is running are written to temporary files</p>
-<p><a href="https://wiki.qemu.org/Documentation/CreateSnapshot">Create snapshot</a></p>
+<p>QEMU supports snapshots - if you break something while testing just
+go back to previous snapshot</p>
+<p>QEMU also supports temporary snapshots, where any changes made to the
+virtual machine while it is running are written to temporary files</p>
+<p><a href="https://wiki.qemu.org/Documentation/CreateSnapshot">Create
+snapshot</a></p>
 </div>
 <div id="other-use-cases" class="slide section level1">
 <h1>Other use cases</h1>
-<h2 id="coreboot---testing-and-developing-open-source-boot-firmware">Coreboot - testing and developing open source boot firmware</h2>
-<p><a href="https://doc.coreboot.org/tutorial/part1.html#test-the-image-using-qemu">Coreboot test image using QEMU</a></p>
+<h2
+id="coreboot---testing-and-developing-open-source-boot-firmware">Coreboot
+- testing and developing open source boot firmware</h2>
+<p><a
+href="https://doc.coreboot.org/tutorial/part1.html#test-the-image-using-qemu">Coreboot
+test image using QEMU</a></p>
 <p><a href="https://www.coreboot.org/QEMU">Coreboot QEMU</a></p>
-<p><a href="https://github.com/linuxboot/book/blob/master/coreboot.u-root.systemboot/README.md">Coreboot, u-root and Systemboot</a></p>
+<p><a
+href="https://github.com/linuxboot/book/blob/master/coreboot.u-root.systemboot/README.md">Coreboot,
+u-root and Systemboot</a></p>
 </div>
 <div id="help" class="slide section level1">
 <h1>Help…</h1>
@@ -242,9 +313,14 @@ thomas adm cdrom sudo dip plugdev kvm lpadmin lxd sambashare docker libvirt</cod
 <h1>Links &amp; resources</h1>
 <ul>
 <li><a href="https://www.qemu.org/">QEMU</a></li>
-<li><a href="https://www.youtube.com/watch?v=AAfFewePE7c">QEMU: A proper guide!</a></li>
-<li><a href="https://www.youtube.com/watch?v=BgZHbCDFODk">Veronica Explains - QEMU/KVM for absolute beginners</a></li>
-<li><a href="https://www.linux-kvm.org/">KVM - Kernel Virtual Machine</a></li>
+<li><a href="https://www.youtube.com/watch?v=AAfFewePE7c">QEMU: A proper
+guide!</a></li>
+<li><a href="https://www.youtube.com/watch?v=BgZHbCDFODk">Veronica
+Explains - QEMU/KVM for absolute beginners</a></li>
+<li><a href="https://www.linux-kvm.org/">KVM - Kernel Virtual
+Machine</a></li>
+<li><a href="https://www.linux-kvm.org/page/9p_virtio">Example Sharing
+Host files with the Guest</a></li>
 </ul>
 </div>
 </body>

@@ -179,7 +179,7 @@ We'll use the QEMU GUI this time
 
 Install relevant utils
 
-    $ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon
+    $ sudo apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon libvirt-daemon-system
 
 Start libvirtd for virt-manager
 
@@ -244,10 +244,33 @@ We can now run the for Windows compiled "hello world" program
 
 # Shared folders between host and guest OS
 
-It is also possible to mount folders on the host machine into the guest machine
+A quick way to share files between host and guest is to create an ISO image containing the files
+
+    $ mkisofs -o ./cd.iso ./share/
+
+You might have to install `mkisofs`
+
+    $ sudo apt install genisoimage
+
+Then add the `-cdrom` parameter to the commandlist when starting `qemu`
+
+    $ qemu-system-x86_64 ... \
+        -cdrom ./cd.iso
+
+Another option is to mount folders on the host machine into the guest machine
 using 9p virtio as the transport for sharing files
 
-[Example Sharing Host files with the Guest](https://www.linux-kvm.org/page/9p_virtio)
+    $ qemu-system-x86_64 ... \
+        -drive file=Image.img,if=virtio \
+        -fsdev local,security_model=passthrough,id=fsdev0,path=./share \
+        -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare \
+
+For an explanation of the parameters se [Example Sharing Host files with the Guest](https://www.linux-kvm.org/page/9p_virtio)
+
+On the guest you now have to mount the shared folder
+
+    $ mkdir /tmp/host_files
+    $ mount -t 9p -o trans=virtio,version=9p2000.L hostshare /tmp/host_files
 
 # Snapshots
 
@@ -281,3 +304,4 @@ CTRL + ALT F : Fullscreen emulator window
 * [QEMU: A proper guide!](https://www.youtube.com/watch?v=AAfFewePE7c)
 * [Veronica Explains - QEMU/KVM for absolute beginners](https://www.youtube.com/watch?v=BgZHbCDFODk)
 * [KVM - Kernel Virtual Machine](https://www.linux-kvm.org/)
+* [Example Sharing Host files with the Guest](https://www.linux-kvm.org/page/9p_virtio)
