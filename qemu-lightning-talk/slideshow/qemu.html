@@ -78,8 +78,8 @@ with near native performance</li>
 <p>Verify virtualization is enabled</p>
 <pre><code>$ egrep -c &#39;(vmx|svm)&#39; /proc/cpuinfo
 12</code></pre>
-<p>vmx = Intel</p>
-<p>svm = AMD</p>
+<p>Virtual Machine Extensions (vmx) = Intel</p>
+<p>Secure Virtual Machine (svm) = AMD</p>
 <p>If the value is zero check your BIOS settings…</p>
 <h2 id="installing">Installing</h2>
 <p>Install QEMU (the virtualization part)</p>
@@ -159,7 +159,7 @@ Error while loading hello-win.exe: Exec format error</code></pre>
 </div>
 <div id="running-other-full-systems" class="slide section level1">
 <h1>Running other full systems</h1>
-<p>QEMU does more than letting us run applikation written for different
+<p>QEMU does more than letting us run applications written for different
 CPU architectures it also lets us run other complete Operating
 Systems</p>
 <h2 id="kubuntu">Kubuntu</h2>
