@@ -37,9 +37,9 @@ Verify virtualization is enabled
     $ egrep -c '(vmx|svm)' /proc/cpuinfo
     12
 
-vmx = Intel
+Virtual Machine Extensions (vmx) = Intel
 
-svm = AMD
+Secure Virtual Machine (svm) = AMD
 
 If the value is zero check your BIOS settings...
 
@@ -121,7 +121,7 @@ Running the different "hello world" programs
 
 # Running other full systems
 
-QEMU does more than letting us run applikation written for different CPU architectures it also lets us run other complete Operating Systems
+QEMU does more than letting us run applications written for different CPU architectures it also lets us run other complete Operating Systems
 
 ## Kubuntu
 
