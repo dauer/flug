@@ -261,7 +261,7 @@ class="slide section level1">
 <h1>Shared folders between host and guest OS</h1>
 <p>A quick way to share files between host and guest is to create an ISO
 image containing the files</p>
-<pre><code>$ mkisofs -o ./cd.iso ./share/</code></pre>
+<pre><code>$ mkisofs -J -o ./cd.iso ./share/</code></pre>
 <p>You might have to install <code>mkisofs</code></p>
 <pre><code>$ sudo apt install genisoimage</code></pre>
 <p>Then add the <code>-cdrom</code> parameter to the commandlist when

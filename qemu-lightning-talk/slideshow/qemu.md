@@ -246,7 +246,7 @@ We can now run the for Windows compiled "hello world" program
 
 A quick way to share files between host and guest is to create an ISO image containing the files
 
-    $ mkisofs -o ./cd.iso ./share/
+    $ mkisofs -J -o ./cd.iso ./share/
 
 You might have to install `mkisofs`
 
